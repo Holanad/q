@@ -400,6 +400,49 @@
             }
         }
     }
+    .production {
+        &-inner {
+            &:nth-child(odd) {
+                .production-block-top {
+                    .production-block-slider {
+                        margin-left: 15px
+                    }
+                }
+            }
+        }
+        &-info {
+            width: 465px;
+            &__title {
+                font-size: 26px;
+            }
+        }
+        &-block {
+            width: 465px;
+            &-top {
+                .production-block-slider {
+                    width: 330px;
+                    margin-right: 15px;
+                }
+                .production-block-square {
+                    width: 120px;
+                    margin-top: 25px;
+                    height: 120px;
+                }
+            }
+            &-bottom {
+                margin-top: 15px;
+                .production-block-slider {
+                    width: 330px;
+                    margin-left: 15px;
+                }
+                .production-block-square {
+                    width: 120px;
+                    margin-bottom: 25px;
+                    height: 120px;
+                }
+            }
+        }
+    }
 }
 
 // 992px - 768px
@@ -1181,6 +1224,48 @@
             &__descr {
                 margin: 10px 0 20px 0;
             }
+        }
+    }
+    .production {
+        &-inner {
+            flex-direction: column;
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+            &:nth-child(odd) {
+                .production-info {
+                    order: -1;
+                }
+            }
+        }
+        &__title {
+            margin-bottom: 40px;
+        }
+        &-info {
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            &__title {
+                line-height: normal;
+            }
+        }
+        &-block {
+            width: 100%;
+            &-square, &-circle, &-bottom {
+                display: none;
+            }
+            &-top {
+                .production-block-slider {
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+            &-slider {
+                &-item {
+                    height: 300px;
+                }
+            }
+            
         }
     }
 }
