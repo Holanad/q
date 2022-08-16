@@ -227,6 +227,9 @@
     }
     .project {
         &-item {
+            &-text {
+                width: 267px;
+            }
             &-image {
                 width: 307px;
                 height: 415px;
@@ -932,6 +935,7 @@
                 width: 100%;
             }
             &-text {
+                width: 314px;
                 &__title, &__date {
                     font-size: 14px;
                 }
@@ -1160,6 +1164,23 @@
         background-position: left !important;
         &-list {
             width: 788px;
+        }
+    }
+    .popup {
+        &-close {
+            top: -60px;
+            right: unset;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &-request, &-application {
+            &__title {
+                line-height: normal;
+                font-size: 38px;
+            }
+            &__descr {
+                margin: 10px 0 20px 0;
+            }
         }
     }
 }
@@ -1566,7 +1587,8 @@
             &-text {
                 padding: 10px;
                 bottom: 10px;
-                width: calc(100% - 20px);
+                left: 10px;
+                width: 246px;
                 &__title, &__date {
                     font-size: 12px;
                     line-height: normal;
@@ -1823,6 +1845,14 @@
             width: 628px;
         }
     }
+    .popup {
+        &-close {
+            top: -60px;
+            right: unset;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 }
 
 // 576px - 320px
@@ -2048,7 +2078,9 @@
             width: 100%;
             &-text {
                 margin: 0 20px;
-                width: 100%;
+                width: 94%;
+                left: 10px;
+                margin: 0;
                 &__title, &__date {
                     font-size: 10px;
                 }
@@ -2279,6 +2311,45 @@
         }
         &-list {
             width: 550px;
+        }
+    }
+    .popup {
+        &-request, &-application {
+            &__title {
+                line-height: normal;
+                font-size: 36px;
+                text-align: center;
+                margin: 0 auto;
+                width: 100%;
+            }
+            &-wrapper {
+                width: 100%;
+                margin: auto 15px;
+                padding: 20px;
+            }
+            &__descr {
+                text-align: center;
+                font-size: 14px;
+                margin: 10px 0 20px 0;
+            }
+            &-image {
+                display: none;
+            }
+            &-form {
+                width: 200px;
+                margin: 0 auto;
+                &-elem {
+                    &__input {
+                        padding: 13px 22px;
+                    }
+                }
+            }
+            .accept-politic__text {
+                font-size: 10px;
+                a {
+                    font-size: 10px;
+                }
+            }
         }
     }
 }

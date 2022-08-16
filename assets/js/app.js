@@ -139,6 +139,30 @@ $(window).on('load resize', function() {
 
 // jQuery function
 $(document).ready(function() {   
+    (function modal () {
+        $(".header-contacts__btn").click(function (e) {
+            e.preventDefault();
+            $(".popup-application").addClass("open");
+            $("html").addClass("blocking");
+        });
+        $(document).mouseup(function (e) {
+            var container = $(".crop");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $("html").removeClass("blocking");
+                $(".duty").removeClass("open");
+            }
+        });
+        $(".popup-close").click(function () {
+            $("html").removeClass("blocking");
+            $(".duty").removeClass("open");
+        });
+        $(".tarif-services__btn").click(function () {
+            $(".popup-request").addClass("open");
+            $("html").addClass("blocking");
+            $('.popup-request__descr span span').text($(this).parent().find('.tarif-list__title').text().trim())
+            $('.popup-request-form__proposal').val($(this).parent().find('.tarif-list__title').text().trim())
+        })
+    })
     // navPosition RECALL
     (function navPosition() {
         if ($('.dev-project-image').length) {

@@ -690,6 +690,7 @@
 // consult
 
 .consult {
+    
     .container {
         position: relative;
     }
@@ -733,6 +734,19 @@
         }
     }
     &-offer {
+        &-success {
+            background: #FFFFFF;
+            border: 1px solid rgba(33, 33, 43, 0.15);
+            border-radius: 14px;
+            color: #ED6E13;
+            font-size: 16px;
+            display: inline-block;
+            padding: 13px 26px;
+            display: none;
+            &.open {
+                display: block;
+            }
+        }
         margin-top: 20px;
         &__phone {
             input {
@@ -1848,9 +1862,8 @@
         &-text {
             position: absolute;
             bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
+            left: 20px;
+            width: 360px;
             padding: 14px;
             transition: all ease-in .4s;
             &::before {
@@ -1864,7 +1877,7 @@
                 border-radius: 12px;
                 border: 1px solid rgba(33, 33, 43, 0.1);
                 backdrop-filter: blur(30px);
-                z-index: -1;
+                z-index: 0;
             }
             &::after {
                 content: '';
@@ -3182,4 +3195,198 @@
 
 .hidden {
     overflow: hidden;
+}
+
+.popup {
+    &-close {
+        position: absolute;
+        top: 0;
+        right: -60px;
+        cursor: pointer;
+    }
+    &-application {
+        background-color: rgba(#21212B,0.5);
+        overflow: auto;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1010;
+        justify-content: center;
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all .3s ease-in;
+        &.open {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all .3s ease-in;
+            visibility: visible;
+        }
+        &-wrapper {
+            position: relative;
+            width: 555px;
+            background: #FFFFFF;
+            box-shadow: 0px 10px 50px -10px rgba(42, 40, 101, 0.15);
+            border-radius: 8px;
+            padding: 40px;
+            margin: auto;
+            border-radius: 22px;
+        }
+        &__title {
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 56px;
+            color: #21212B;
+            width: 395px;
+        }
+        &__descr {
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(33, 33, 43, 0.5);
+            margin: 20px 0 30px 0;
+        }
+        &-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 259px;
+            height: 261px;
+        }
+        &-form {
+            width: 223px;
+            &-elem {
+                width: 100%;
+                &__input {
+                    width: 100%;
+                    padding: 13px 25px;
+                    border: 2px solid #21212B !important; 
+                    border-radius: 14px !important;
+                }
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+            .accept-politic__label {
+                margin: 20px 0;
+            }
+            &-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(74.45deg, #FA8111 47.37%, #FAAA11 100%);
+                border: 1px solid rgba(33, 33, 43, 0.15);
+                border-radius: 14px;
+                width: 100%;
+                padding: 13px;
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #FFFFFF;
+                    margin-right: 10px;
+                }
+                &:hover {
+                    box-shadow: 0px 4px 16px -2px rgba(237, 110, 19, 1);
+                }
+            }
+        }
+    }
+    &-request {
+        background-color: rgba(#21212B,0.5);
+        overflow: auto;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1010;
+        justify-content: center;
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all .3s ease-in;
+        &.open {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all .3s ease-in;
+            visibility: visible;
+        }
+        &-wrapper {
+            position: relative;
+            width: 555px;
+            background: #FFFFFF;
+            box-shadow: 0px 10px 50px -10px rgba(42, 40, 101, 0.15);
+            border-radius: 8px;
+            padding: 40px;
+            margin: auto;
+            border-radius: 22px;
+        }
+        &__title {
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 56px;
+            color: #21212B;
+            width: 395px;
+        }
+        &__descr {
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(33, 33, 43, 0.5);
+            margin: 20px 0 30px 0;
+            span {
+                color: rgba(33, 33, 43, 1);
+            }
+        }
+        &-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 259px;
+            height: 261px;
+        }
+        &-form {
+            width: 223px;
+            &-elem {
+                width: 100%;
+                &__input {
+                    width: 100%;
+                    padding: 13px 25px;
+                    border: 2px solid #21212B !important; 
+                    border-radius: 14px !important;
+                }
+                &:nth-child(2) {
+                    margin-bottom: 10px;
+                }
+            }
+            .accept-politic__label {
+                margin: 20px 0;
+            }
+            &-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(74.45deg, #FA8111 47.37%, #FAAA11 100%);
+                border: 1px solid rgba(33, 33, 43, 0.15);
+                border-radius: 14px;
+                width: 100%;
+                padding: 13px;
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #FFFFFF;
+                    margin-right: 10px;
+                }
+                &:hover {
+                    box-shadow: 0px 4px 16px -2px rgba(237, 110, 19, 1);
+                }
+            }
+        }
+    }
 }
